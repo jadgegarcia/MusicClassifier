@@ -39,7 +39,7 @@ def findGenre(ind):
 
 # Function to extract audio features
 def extract_features(audio_file):
-    y, sr = librosa.load(audio_file, sr=None)
+    y, sr = librosa.load(audio_file)
     chroma_stft_mean = np.mean(librosa.feature.chroma_stft(y=y, sr=sr))
     chroma_stft_var = np.var(librosa.feature.chroma_stft(y=y, sr=sr))
     rms_mean = np.mean(librosa.feature.rms(y=y))
